@@ -19,11 +19,12 @@ const Modal = { /*Inicio de um Objeto */
 
 const Storage = {
     get() {
-        return JSON.parse(localStorage.getItem("dev.finances:transaction")) || []
+        //return JSON.parse(localStorage.getItem("dev.finances:transactions")) || []
+        return JSON.parse(localStorage.getItem("dev.finances:transactions")) || []
     },
 
     set(transactions) {
-        localStorage.setItem("dev.finances:transaction", JSON.stringify(transactions))
+        localStorage.setItem("dev.finances:transactions", JSON.stringify(transactions))
     }
 }
 
@@ -46,7 +47,7 @@ const Transaction = {
         let income = 0;
         //Pegar todas as transações
         //Para cada transação,
-        Transaction.all.forEach(function (transaction ) {
+        Transaction.all.forEach(transaction => {
             //se ela for maior que zero
             if( transaction.amount > 0 ) {
                 // Somar a uma variavel e retornar a variavel
@@ -61,7 +62,7 @@ const Transaction = {
         let expense = 0;
         //Pegar todas as transações
         //Para cada transação,
-        Transaction.all.forEach(function (transaction ) {
+        Transaction.all.forEach(transaction  => {
             //se ela for menor que zero
             if( transaction.amount < 0 ) {
                 // Somar a uma variavel e retornar a variavel

@@ -1,143 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
+    <head>
     <!-- Cabeçalho -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!-- Com essas configurações e possivel eu trabalhar com formatos de telas diferentes-->
-    <title>dev.finance$</title>
+        <title>dev.finance$</title>
     <!--Styles-->
-    <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="./styles.css">
     <!--Fonts-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400&display=swap" rel="stylesheet">
-</head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400&display=swap" rel="stylesheet">
+    </head>
 
-<body>
+    <body>
     <!-- Corpo -->
 
-    <header>
-        <img src="./assets/logo.svg" alt="Logo Dev Finance">
-    </header>
+        <header>
+         <img src="./assets/logo.svg" alt="Logo Dev Finance">
+        </header>
 
-    <main class="container">
-        <section id="balance">
-            <h2 class="sr-only">Balanço</h2>
+        <main class="container">
+            <section id="balance">
+                <h2 class="sr-only">Balanço</h2>
 
-            <div class="card">
-                <h3>
-                    <span>Entradas</span> <!-- Caixa span e uma caixa generica que serve para eu manter meu elemento em linha-->
-                    <img src="./assets/income.svg" alt="Imagem de entradas">
-                </h3>
-                <p id="incomeDisplay">R$ 0,00</p>
-            </div>
+                <div class="card">
+                    <h3>
+                        <span>Entradas</span> <!-- Caixa span e uma caixa generica que serve para eu manter meu elemento em linha-->
+                        <img src="./assets/income.svg" alt="Imagem de entradas">
+                    </h3>
+                    <p id="incomeDisplay">R$ 0,00</p>
+                </div>
 
-            <div class="card">  
-                <h3>
-                    <span>Saídas</span> <!-- Caixa span e uma caixa generica que serve para eu manter meu elemento em linha-->
-                    <img src="./assets/expense.svg" alt="Imagem de saídas">
-                </h3>
-                <p id="expenseDisplay">R$ 0,00</p>
-            </div>
+                <div class="card">  
+                    <h3>
+                        <span>Saídas</span> <!-- Caixa span e uma caixa generica que serve para eu manter meu elemento em linha-->
+                        <img src="./assets/expense.svg" alt="Imagem de saídas">
+                    </h3>
+                    <p id="expenseDisplay">R$ 0,00</p>
+                </div>
 
-            <div class="card total"> <!-- Aqui eu tenho 2 classes-->
-                <h3>
-                    <span>Total</span> <!-- Caixa span e uma caixa generica que serve para eu manter meu elemento em linha-->
-                    <img src="./assets/total.svg" alt="Imagem de total">
-                </h3>
-                <p id="totalDisplay">R$ 0,00</p> 
-            </div>
+                <div class="card total"> <!-- Aqui eu tenho 2 classes-->
+                    <h3>
+                        <span>Total</span> <!-- Caixa span e uma caixa generica que serve para eu manter meu elemento em linha-->
+                        <img src="./assets/total.svg" alt="Imagem de total">
+                    </h3>
+                    <p id="totalDisplay">R$ 0,00</p> 
+                </div>
 
-        </section>
+            </section>
 
-        <section id="transaction">
-            <h2 class="sr-only">Transações</h2>
+            <section id="transaction">
+                <h2 class="sr-only">Transações</h2>
 
-            <a href="#" 
-            onclick="Modal.open()"
-            class="button new">+ Nova Transação</a>
+                <a href="#" 
+                onclick="Modal.open()"
+                class="button new">+ Nova Transação</a>
 
             <!-- Tabelas em HTML -->
 
-            <table id="data-table"> <!--data-table significa uma tabela de dados-->
-                <thead>
+                <table id="data-table"> <!--data-table significa uma tabela de dados-->
+                    <thead>
                     <!-- Cabeçalho da Tabela -->
-                    <tr>
+                        <tr>
                         <!-- Coluna da Tabela -->
-                        <th>Descrição</th> <!-- Coluna do Cabeçalho-->
-                        <th>Valor</th>
-                        <th>Data</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
+                            <th>Descrição</th> <!-- Coluna do Cabeçalho-->
+                            <th>Valor</th>
+                            <th>Data</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     <!-- Corpo da Tabela -->
-                </tbody>
-            </table>
-        </section>
+                    </tbody>
+                </table>
+            </section>
+        </main>
 
-
-    </main>
-
-    <div class="modal-overlay active "> <!-- Caixinha transparente-->
-        <div class="modal"> <!--Caixinha Branca --> 
-            <div id="form">
-                <h2>Nova Transação</h2>
-                <form action="" onsubmit="Form.submit(event)">
-                    <div class="input-group">
-                        <label
-                            class="sr-only" 
-                            for="description">Descrição</label><!--Geralmente Label em seguida um Input-->
-                        <input 
-                            type="text" 
-                            id="description" 
-                            name="description"
-                            placeholder="Descrição" 
+        <div class="modal-overlay "> <!-- Caixinha transparente-->
+            <div class="modal"> <!--Caixinha Branca --> 
+                <div id="form">
+                    <h2>Nova Transação</h2>
+                    <form action="" onsubmit="Form.submit(event)">
+                        <div class="input-group">
+                            <label
+                                class="sr-only" 
+                                for="description">Descrição</label><!--Geralmente Label em seguida um Input-->
+                            <input 
+                                type="text" 
+                                id="description" 
+                                name="description"
+                                placeholder="Descrição" 
                             /><!-- E um atributo que não tem valor "placeholder"-->
-                    </div>
+                        </div>
 
-                    <div class="input-group">
-                        <label
-                            class="sr-only" 
-                            for="amount">Valor</label><!--Geralmente Label em seguida um Input-->
-                        <input 
-                            type="number" 
-                            step="0.01"
-                            id="amount" 
-                            name="amount"
-                            placeholder="0,00" 
+                        <div class="input-group">
+                            <label
+                                class="sr-only" 
+                                for="amount">Valor</label><!--Geralmente Label em seguida um Input-->
+                            <input 
+                                type="number" 
+                                step="0.01"
+                                id="amount" 
+                                name="amount"
+                                placeholder="0,00" 
                             /><!-- E um atributo que não tem valor "placeholder"-->
                             <small class="help">Use o sinal - (negativo) para despesas e ,(vírgula) para casas decimais</small> <!-- Small e um tipo de tag ue vai deixar o texto pequeno-->
-                    </div>
+                        </div>
 
-                    <div class="input-group">
-                        <label
-                            class="sr-only" 
-                            for="date">Data</label><!--Geralmente Label em seguida um Input-->
-                        <input 
-                            type="date" 
-                            id="date" 
-                            name="date" 
+                        <div class="input-group">
+                            <label
+                                class="sr-only" 
+                                for="date">Data</label><!--Geralmente Label em seguida um Input-->
+                            <input 
+                                type="date" 
+                                id="date" 
+                                name="date" 
                             /> <!-- E um atributo que não tem valor "placeholder"-->
-                    </div>
+                        </div>
 
-                    <div class="input-group actions">
-                        <a onclick="Modal.close()" href="#" class="button cancel">Cancelar</a>
-                        <button >Salvar</button>
-                    </div>
-                </form>
+                        <div class="input-group actions">
+                            <a 
+                            onclick="Modal.close()"
+                            href="#" 
+                            class="button cancel">Cancelar</a>
+                            <button >Salvar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-    <footer>
-        <p>dev.finance$</p>
-    </footer>
+        <footer>
+            <p>dev.finance$</p>
+        </footer>
 
-    <script src="./scripts.js"></script>
+        <script src="./scripts.js"></script>
 
-</body>
+    </body>
 
 </html>
 
