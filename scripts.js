@@ -124,9 +124,13 @@ const DOM = {
 
 const Utils = {
     formatAmount(value){
-        value = Number(value.replace(/\,\./g,"")) * 100
+        //value = Number(value.replace(/\,\./g,"")) * 100
 
-        return value
+       // return value
+
+       value = Number(value) * 100
+
+       return Math.round(value)
     },
 
     formatDate(date) {
@@ -140,6 +144,7 @@ const Utils = {
         value = String(value).replace(/\D/g, "")
 
         value = Number(value) / 100
+        
 
         value = value.toLocaleString("pt-BR", {
             style: "currency",
